@@ -1,0 +1,5 @@
+:root {
+    --text-base: hsl(10, 0%, 80%);
+    --text-strong:  hsl(10, 0%, 90%);
+    --text-strongest:  hsl(10, 0%,100%);
+}
