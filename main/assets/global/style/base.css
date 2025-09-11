@@ -1,5 +1,9 @@
-body{
-    max-height: var(--screen-height);
-    max-width: var(--screen-width);
-    background-color: var(--color-background-primary);
+body {
+	max-height: var(--screen-height);
+	max-width: var(--screen-width);
+	background-color: var(--color-background-primary);
+}
+
+* {
+	color: var(--text-base);
 }

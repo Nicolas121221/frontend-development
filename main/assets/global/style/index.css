@@ -6,3 +6,4 @@
 /* imports global components styling */
 @import url(../components/navbar.css);
 @import url(../components/sidebar.css);
+@import url(../components/main-container.css);
