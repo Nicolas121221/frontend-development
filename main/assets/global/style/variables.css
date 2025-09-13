@@ -2,15 +2,16 @@
 	--screen-heigth: 100vh;
 	--screen-width: 100vw;
 
-    --text-base: hsl(10, 0%, 70%);
-    --text-strong:  hsl(10, 0%, 85%);
-    --text-strongest:  hsl(10, 0%, 90%);
+	--text-base: hsl(10, 0%, 70%);
+	--text-strong: hsl(10, 0%, 85%);
+	--text-strongest: hsl(10, 0%, 90%);
 
-	--color-white: hsl(0 , 10%, 100%);
-	--color-black: hsl(0 , 10%, 10%);
+	--color-white: hsl(0, 10%, 100%);
+	--color-black: hsl(0, 10%, 10%);
 
-	--color-light-primary: hsl(240, 10%, 50%);
+	--color-light-primary: hsl(240, 76%, 61%);
 	--color-ligth-gray: hsl(0, 1%, 50%);
 
-	--color-background-primary: hsl(240, 20%, 10%)
+	--color-background-primary: hsl(240, 20%, 10%);
+	--color-background-secondary: hsl(240, 20%, 5%);
 }

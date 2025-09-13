@@ -1,7 +1,10 @@
-.main-container{
-	margin-inline:auto;
-	width: 1000px;
+.main-container {
+	margin-inline: auto;
+	width: 100%;
+	max-width: 1000px;
 	background: var(--color-background-primary);
-	height: 100vh;
-	padding-top: 10px;
+	min-height: 100vh;
+	padding-top: 10rem;
+	padding-left: 5rem;
+	color: var(--text-base);
 }
