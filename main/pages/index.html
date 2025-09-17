@@ -22,7 +22,7 @@
 		/>
 
 		<!-- base styles -->
-		<link rel="stylesheet" href="../assets/pages/index/styles.css" />
+		<link rel="stylesheet" href="../assets/pages/index/css/styles.css" />
 
 		<title>Frontend - 2025</title>
 	</head>
@@ -30,9 +30,8 @@
 		<header class="navbar">
 			<h1>
 				<a
-					href="./index.html"
+					href="#intro"
 					tabindex="0"
-					title="home"
 					aria-roledescription="menuitem"
 					>Frontend - 2025/2</a
 				>
@@ -41,10 +40,9 @@
 				<ul>
 					<li>
 						<a
-							href="./lessons.html"
+							href="#schedule"
 							tabindex="0"
 							aria-roledescription="menuitem"
-							title="go to my lessons"
 							>Lessons</a
 						>
 					</li>
@@ -53,7 +51,6 @@
 							href=""
 							tabindex="0"
 							aria-roledescription="menuitem"
-							title="Ideas during the classes"
 							>Personal</a
 						>
 					</li>
@@ -80,7 +77,7 @@
 				</li>
 			</ul>
 		</aside>
-		<main class="main-container">
+		<main class="main-container" id="intro">
 			<section class="intro">
 				<h1>Frontend Development</h1>
 				<hr />
@@ -90,18 +87,23 @@
 					of 2025.
 				</p>
 
-				<a href="">learn more <i>&plus;</i></a>
+				<a href="#schedule">learn more <i>&plus;</i></a>
 			</section>
 
-			<section class="schedule">
+			<section class="schedule" id="schedule">
 				<h2>schedule</h2>
 				<hr>
 				<article class="calendar" id="calendar">
 					<h4>calendar</h4>
-					<p>september</p>
+					<select id="month-select"></select>
+
+					<table id="month-table">
+
+					</table>
 				</article>
 				<div id="events"></div>
 			</section>
 		</main>
+		<script src="../assets/pages/index/js/index.js"></script>
 	</body>
 </html>

@@ -1,0 +1,41 @@
+.calendar{
+	top: 2rem;
+	position: relative;
+	padding: 2rem;
+	right: -45%;
+	width: 50rem;
+	height: 40rem;
+	background: var(--color-background-secondary);
+	border-radius: 3rem;
+	box-shadow: 0 0 0.3rem var(--color-light-primary);
+}
+.calendar h4{
+	text-align: right;
+	font-size: 1.9rem;
+	color: var(--text-strong);
+}
+
+#month-select{
+	font-size: 1.6rem;
+	padding: 0.2rem 2rem;
+	border:1px solid var(--color-light-primary);
+	color: var(--color-white);
+	background: var(--color-background-secondary);
+	text-align: left;
+}
+
+#month-table{
+	font-family: sans-serif;
+	margin-top: 1rem;
+	width: 100%;
+}
+
+#month-table thead td{
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+#month-table thead td:first-child{
+	color: var(--color-light-primary);
+	opacity: 150%;
+}
