@@ -1,19 +1,32 @@
-# Programação Frontend - 2025/2
+# 🌐 | Frontend Development – 2025/2
 
-O repositório foi desenvolvido durante as aulas de programação frontend da faculdade de ciência da computação, os contéudos forma passados ao longo do ano de 2025 durante o segundo semestre da faculdade, todos os conteúdos apresentados durante as aulas assim como os exercícios e avalições estão presentes nesse repositório, a minha intenção é armazenar todas as informações passadas pelo professor durante a aula também como forma de prática do HTML,CSS e javascript.
+This repository contains the materials developed during the **Frontend Development** classes of the **Computer Science** degree, throughout the **second semester of 2025**.
 
-Este projeto conta com uma landing page construida em html, css e javascript basta executar o arquivo index.html dentro da pasta "./main/pages".
+Its purpose is to centralize **all content delivered by the instructor**, including **exercises, assessments, and practical examples**, while also serving as a workspace to practice **HTML**, **CSS**, and **JavaScript**.
 
-## Estrutura de pastas
+## 🚀 | About the Project
 
-    | - main
-    |   | - assets
-    |   | - pages  
-    | - templates
-    | - .editorconfig
-    | - licence.txt
-    | - readme.md
+The project includes a **Landing Page** built with **HTML**, **CSS**, and **JavaScript**.
+To view it, simply open the `index.html` file located in the `./main/pages` folder.
+
+## 📂 | Folder Structure
+
+```txt
+📁frontend-development
+    └── 📁main
+        └── 📁assets
+            └── 📁icons
+            └── 📁pages
+        └── 📁pages
+            └── 📁lessons
+            ├── index.html
+    └── 📁templates
+        ├── base.html
+    ├── .editorconfig
+    ├── LICENCE
+    └── README.md
+```
 
 ---
 
-O conteúdo abordado durante todas as aulas está armazenado conforme a data da aula em específico.
+All class materials are organized by **date** for easier reference.
