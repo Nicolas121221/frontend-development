@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link
 			rel="shortcut icon"
-			href="https://cdn-icons-png.flaticon.com/512/6211/6211957.png"
+			href="https://cdn-icons-png.flaticon.com/512/534/534621.png"
 			type="image/png-icon"
 		/>
 		<!-- Base description about the page -->
@@ -21,15 +21,12 @@
 		/>
 		<!-- base styles -->
 		<link rel="stylesheet" href="../assets/pages/index/css/styles.css" />
-		<title>Frontend - 2025</title>
+		<title>frontend - 2025/2</title>
 	</head>
 	<body>
 		<header class="navbar">
 			<h1>
-				<a
-					href="#intro"
-					tabindex="0"
-					aria-roledescription="menuitem"
+				<a href="#intro" tabindex="0" aria-roledescription="menuitem"
 					>Frontend - 2025/2</a
 				>
 			</h1>
@@ -44,10 +41,7 @@
 						>
 					</li>
 					<li>
-						<a
-							href=""
-							tabindex="0"
-							aria-roledescription="menuitem"
+						<a href="" tabindex="0" aria-roledescription="menuitem"
 							>Personal</a
 						>
 					</li>
@@ -67,10 +61,14 @@
 		<aside class="sidebar">
 			<ul>
 				<li>
-					<i><img src="../assets/icons/home.svg" alt="" /></i>
+					<a href="#intro"
+						><i><img src="../assets/icons/home.svg" alt="" /></i
+					></a>
 				</li>
 				<li>
-					<i><img src="../assets/icons/bookmark.svg" alt="" /></i>
+					<a href="#schedule"
+						><i><img src="../assets/icons/bookmark.svg" alt="" /></i
+					></a>
 				</li>
 			</ul>
 		</aside>
@@ -79,9 +77,9 @@
 				<h1>Frontend Development</h1>
 				<hr />
 				<p>
-					this project was made during the frontend development lessons
-					during my graduation in computer science in the second semester
-					of 2025.
+					this project was made during the frontend development
+					lessons during my graduation in computer science in the
+					second semester of 2025.
 				</p>
 
 				<a href="#schedule">learn more <i>&plus;</i></a>
@@ -89,18 +87,17 @@
 
 			<section class="schedule" id="schedule">
 				<h2>schedule</h2>
-				<hr>
+				<hr />
 				<article class="calendar" id="calendar">
-					<h4>calendar 2025</h4>
+					<h4><span id="month-title"></span>Calendar 2025</h4>
 					<select id="month-select"></select>
 
-					<table id="month-table">
-
-					</table>
+					<table id="month-table"></table>
 				</article>
-				<div id="events"></div>
+				<section id="events"></section>
 			</section>
 		</main>
 		<script src="../assets/pages/index/js/index.js"></script>
+		<script src="../assets/pages/index/js/colors.js"></script>
 	</body>
 </html>

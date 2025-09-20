@@ -6,8 +6,8 @@
 	width: 50rem;
 	height: 40rem;
 	background: var(--color-background-secondary);
-	border-radius: 3rem;
-	box-shadow: 0 0 0.3rem var(--color-light-primary);
+	border-radius: 1rem;
+	box-shadow: 0 0 0.1rem var(--color-light-primary);
 }
 
 .calendar h4 {
@@ -15,17 +15,27 @@
 	font-size: 1.9rem;
 	color: var(--text-strong);
 }
+.calendar h4 span{
+	display: inline-block;
+	margin-right: 1rem;
+	text-transform: lowercase;
+}
 
 #month-select {
 	font-size: 1.6rem;
-	padding: 0.2rem 2rem;
+	padding: 0.5rem 2rem 0.3rem 1rem;
 	border: 1px solid var(--color-light-primary);
 	color: var(--color-white);
 	background: var(--color-background-secondary);
 	text-align: left;
+	margin-top: 0.5rem;
+	margin-left: 2rem;
+	border-radius: 0.3rem;
+	text-transform: lowercase;
 }
 
 #month-table {
+	border-collapse: collapse;
 	font-family: sans-serif;
 	margin-top: 1rem;
 	width: 100%;
@@ -37,14 +47,20 @@
 #month-table thead td {
 	font-size: 1.2rem;
 	text-align: center;
+	opacity: 50%;
 }
 
 #month-table thead td:first-child {
 	color: var(--color-light-primary);
-	opacity: 150%;
 }
 
 #month-table tbody td {
 	height: 50px;
 	width: 25px;
+	font-size: 1.8rem;
+}
+
+#month-table tbody td:first-child{
+	color: var(--color-light-primary);
+	opacity: 80%;
 }

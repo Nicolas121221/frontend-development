@@ -1,4 +1,4 @@
-@import url(../../../global/style/index.css);
+@import url(../../../global/styles/index.css);
 @import url(./calendar.css);
 
 .intro {
@@ -13,29 +13,25 @@
 }
 
 .intro p {
-	text-indent: 1rem;
+	text-indent: 5rem;
 	width: 40rem;
 }
 
 .intro a {
-	position: relative;
-	margin-top: 2rem;
-	display: block;
+	margin-top: 1.5rem;
+	display: inline-block;
 	font-size: 2rem;
 	background-color: var(--color-light-primary);
 	color: var(--text-strongest);
-	padding-inline: 2rem;
+	padding: 0 2rem;
+	max-width: fit-content;
 	border-radius: 10rem;
 	user-select: none;
-	max-width: fit-content;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
+	text-shadow: 1px 1px 10px black;
 }
 
 .intro a:hover {
-	filter: brightness(120%);
+	filter: brightness(110%);
 }
 
 .intro i {
