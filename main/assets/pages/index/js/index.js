@@ -32,17 +32,23 @@ function createCalendar() {
 
 function createDays() {
 	const tbody = document.createElement("tbody");
-	for (w = 0; w < 5; w++) {
+	for (w = 0; w < 6; w++) {
 		const tr = document.createElement("tr");
 		for (i = 1; i < 8; i++) {
 			const currentDay = w * 7 + i - getWeekday();
 			const date = new Date(
 				`${currentMonth}/${currentDay}/2025`
-			).toLocaleDateString("pt-BR", { day: "numeric" });
-			const td = document.createElement("td");
-			if (date !== "Invalid Date") td.innerText = date;
-			if (currentDay < 0 || (currentDay > 30 && parseInt(date) < 10))
-				td.innerText = "";
+			).getDate();
+
+			let td;
+
+			if (date !== "Invalid Date") td = createRadioButtonTd(currentDay);
+			if (
+				currentDay <= 0 ||
+				currentDay > 31 ||
+				(date === 1 && currentDay > 1)
+			)
+				td = document.createElement("td");
 			tr.appendChild(td);
 		}
 		tbody.appendChild(tr);
@@ -59,17 +65,9 @@ monthSelect.addEventListener("change", (e) => {
 
 function getWeekday() {
 	const date = new Date(`${currentMonth}/1/2025`);
-	const days = [
-		"domingo",
-		"segunda-feira",
-		"terça-feira",
-		"quarta-feira",
-		"quinta-feira",
-		"sexta-feira",
-		"sábado",
-	];
+	const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-	return days.indexOf(date.toLocaleDateString("pt-BR", { weekday: "long" }));
+	return days.indexOf(date.toLocaleDateString("en-us", { weekday: "short" }));
 }
 
 function setMonth() {
@@ -79,7 +77,44 @@ function setMonth() {
 	).toLocaleDateString("en-US", { month: "long" });
 }
 
+function createRadioButtonTd(day) {
+	const radio = document.createElement("input");
+	const label = document.createElement("label");
+	const td = document.createElement("td");
+
+	label.innerText = day;
+	label.setAttribute("for", day);
+	radio.setAttribute("type", "radio");
+	radio.setAttribute("id", day);
+	radio.setAttribute("value", `${currentMonth}/${day}`);
+	radio.setAttribute("name", "day");
+
+	label.appendChild(radio);
+	td.appendChild(label);
+	return td;
+}
+
+function addLabelListeners() {
+	const labels = document.querySelectorAll("label");
+
+	let currentInput;
+	labels.forEach((label) => {
+		label.addEventListener("click", (e) => {
+			e.preventDefault();
+			const input = label.querySelector("[type=radio]");
+			if (e.target === currentInput) {
+				input.removeAttribute("checked");
+			} else {
+				input.setAttribute("checked", true);
+			}
+			currentInput = e.target;
+			return;
+		});
+	});
+}
+
 createMonthOptions();
 createCalendar();
 createDays();
 setMonth();
+addLabelListeners();

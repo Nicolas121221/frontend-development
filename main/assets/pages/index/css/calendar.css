@@ -4,7 +4,7 @@
 	padding: 2rem;
 	right: -45%;
 	width: 50rem;
-	height: 40rem;
+	height: fit-content;
 	background: var(--color-background-secondary);
 	border-radius: 1rem;
 	box-shadow: 0 0 0.1rem var(--color-light-primary);
@@ -15,7 +15,8 @@
 	font-size: 1.9rem;
 	color: var(--text-strong);
 }
-.calendar h4 span{
+
+.calendar h4 span {
 	display: inline-block;
 	margin-right: 1rem;
 	text-transform: lowercase;
@@ -54,13 +55,29 @@
 	color: var(--color-light-primary);
 }
 
-#month-table tbody td {
-	height: 50px;
-	width: 25px;
-	font-size: 1.8rem;
+#month-table td {
+	height: 5rem;
+	width: 2.5rem;
 }
 
-#month-table tbody td:first-child{
+#month-table label {
+	padding: 1rem 1rem;
+	font-size: 1.6rem;
+	cursor: pointer;
+	border-radius: 10%;
+	user-select: none;
+}
+
+#month-table tbody td:first-child label {
 	color: var(--color-light-primary);
 	opacity: 80%;
+}
+
+#month-table label:has(input:checked) {
+	background-color: var(--color-light-primary);
+	color: var(--color-black) !important;
+}
+
+#month-table td input {
+	display: none;
 }
