@@ -22,56 +22,15 @@
 		<!-- base styles -->
 		<link rel="stylesheet" href="../assets/pages/index/css/styles.css" />
 		<title>frontend - 2025/2</title>
+
+		<!-- component Scripts -->
+		<script src="../assets/global/js/components.js" defer></script>
+		<script src="../assets/pages/index/js/index.js" defer></script>
+		<script src="../assets/pages/index/js/colors.js" defer></script>
 	</head>
 	<body>
-		<header class="navbar">
-			<h1>
-				<a href="#intro" tabindex="0" aria-roledescription="menuitem"
-					>Frontend - 2025/2</a
-				>
-			</h1>
-			<nav>
-				<ul>
-					<li>
-						<a
-							href="#schedule"
-							tabindex="0"
-							aria-roledescription="menuitem"
-							>Lessons</a
-						>
-					</li>
-					<li>
-						<a href="" tabindex="0" aria-roledescription="menuitem"
-							>Personal</a
-						>
-					</li>
-					<li>
-						<a
-							href="http://www.github.com/nicolas121221"
-							target="_blank"
-							tabindex="0"
-							aria-roledescription="menuitem"
-							title="github/nicolas121221"
-							>Github</a
-						>
-					</li>
-				</ul>
-			</nav>
-		</header>
-		<aside class="sidebar">
-			<ul>
-				<li>
-					<a href="#intro"
-						><i><img src="../assets/icons/home.svg" alt="" /></i
-					></a>
-				</li>
-				<li>
-					<a href="#schedule"
-						><i><img src="../assets/icons/bookmark.svg" alt="" /></i
-					></a>
-				</li>
-			</ul>
-		</aside>
+		<div id="navbar"></div>
+		<div id="sidebar"></div>
 		<main class="main-container" id="intro">
 			<section class="intro">
 				<h1>Frontend Development</h1>
@@ -97,7 +56,5 @@
 				<section id="events"></section>
 			</section>
 		</main>
-		<script src="../assets/pages/index/js/index.js"></script>
-		<script src="../assets/pages/index/js/colors.js"></script>
 	</body>
 </html>

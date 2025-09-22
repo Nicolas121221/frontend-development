@@ -42,7 +42,7 @@ function createDays() {
 
 			let td;
 
-			if (date !== "Invalid Date") td = createRadioButtonTd(currentDay);
+			if (date !== "Invalid Date") td = createCheckboxTd(currentDay);
 			if (
 				currentDay <= 0 ||
 				currentDay > 31 ||
@@ -54,6 +54,7 @@ function createDays() {
 		tbody.appendChild(tr);
 	}
 	table.appendChild(tbody);
+	event
 }
 
 monthSelect.addEventListener("change", (e) => {
@@ -77,38 +78,30 @@ function setMonth() {
 	).toLocaleDateString("en-US", { month: "long" });
 }
 
-function createRadioButtonTd(day) {
-	const radio = document.createElement("input");
+function createCheckboxTd(day) {
+	const checkbox = document.createElement("input");
 	const label = document.createElement("label");
 	const td = document.createElement("td");
 
 	label.innerText = day;
 	label.setAttribute("for", day);
-	radio.setAttribute("type", "radio");
-	radio.setAttribute("id", day);
-	radio.setAttribute("value", `${currentMonth}/${day}`);
-	radio.setAttribute("name", "day");
+	checkbox.setAttribute("type", "checkbox");
+	checkbox.setAttribute("id", day);
+	checkbox.setAttribute("value", `${currentMonth}/${day}`);
+	checkbox.setAttribute("name", "day");
 
-	label.appendChild(radio);
+	label.appendChild(checkbox);
 	td.appendChild(label);
 	return td;
 }
 
-function addLabelListeners() {
-	const labels = document.querySelectorAll("label");
-
-	let currentInput;
-	labels.forEach((label) => {
-		label.addEventListener("click", (e) => {
-			e.preventDefault();
-			const input = label.querySelector("[type=radio]");
-			if (e.target === currentInput) {
-				input.removeAttribute("checked");
-			} else {
-				input.setAttribute("checked", true);
-			}
-			currentInput = e.target;
-			return;
+function addCheckboxListeners() {
+	const checkbox = document.querySelectorAll("[type=checkbox]");
+	checkbox.forEach((box) => {
+		box.addEventListener("click", (e) => {
+			checkbox.forEach((checkbox)=>{
+				if(checkbox !== e.target) checkbox.checked = false
+			})
 		});
 	});
 }
@@ -117,4 +110,4 @@ createMonthOptions();
 createCalendar();
 createDays();
 setMonth();
-addLabelListeners();
+addCheckboxListeners();
