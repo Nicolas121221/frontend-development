@@ -1,8 +1,8 @@
 const root = document.documentElement;
 let isIncreasing = true;
-const min = 0;
-const max = 40;
-let colorIndex = 1;
+const min = 200;
+const max = 240;
+let colorIndex = 201;
 
 setInterval(() => {
 	root.style.setProperty(
@@ -16,7 +16,7 @@ setInterval(() => {
 		colorIndex--;
 	}
 	checkIncreasing();
-}, 10);
+}, 1000);
 
 function checkIncreasing() {
 	if (colorIndex === max) return (isIncreasing = false);

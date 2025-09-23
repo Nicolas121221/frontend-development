@@ -54,7 +54,7 @@ function createDays() {
 		tbody.appendChild(tr);
 	}
 	table.appendChild(tbody);
-	event
+	addCheckboxListeners();
 }
 
 monthSelect.addEventListener("change", (e) => {
@@ -99,9 +99,19 @@ function addCheckboxListeners() {
 	const checkbox = document.querySelectorAll("[type=checkbox]");
 	checkbox.forEach((box) => {
 		box.addEventListener("click", (e) => {
-			checkbox.forEach((checkbox)=>{
-				if(checkbox !== e.target) checkbox.checked = false
-			})
+			checkbox.forEach((checkbox) => {
+				if (checkbox !== e.target) checkbox.checked = false;
+			});
+
+			const selectedBox = document.querySelector("[type=checkbox]");
+
+			const dayHeader = document.querySelector("#day-header");
+
+			if (selectedBox) {
+				dayHeader.innerText = box.parentElement.innerText
+			} else {
+				dayHeader.innerText = monthSelect.value;
+			}
 		});
 	});
 }
