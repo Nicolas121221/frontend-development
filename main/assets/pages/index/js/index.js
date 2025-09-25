@@ -1,6 +1,8 @@
 const monthSelect = document.querySelector("#month-select");
 const table = document.querySelector("#month-table");
-let currentMonth = 6;
+const dayHeader = document.querySelector("#day-header");
+const monthTitle = document.querySelector("#month-title");
+let currentMonth = 9;
 
 function createMonthOptions() {
 	const monthOptions = [];
@@ -54,15 +56,7 @@ function createDays() {
 		tbody.appendChild(tr);
 	}
 	table.appendChild(tbody);
-	addCheckboxListeners();
 }
-
-monthSelect.addEventListener("change", (e) => {
-	currentMonth = e.target.value;
-	table.querySelector("tbody").remove();
-	createDays();
-	setMonth();
-});
 
 function getWeekday() {
 	const date = new Date(`${currentMonth}/1/2025`);
@@ -72,10 +66,11 @@ function getWeekday() {
 }
 
 function setMonth() {
-	const monthTitle = document.querySelector("#month-title");
-	monthTitle.innerText = new Date(
-		`${currentMonth}/1/2025`
-	).toLocaleDateString("en-US", { month: "long" });
+	const date = new Date(`${currentMonth}/1/2025`).toLocaleString("en", {
+		month: "long",
+	});
+	monthTitle.innerText = date;
+	dayHeader.innerText = date;
 }
 
 function createCheckboxTd(day) {
@@ -103,18 +98,36 @@ function addCheckboxListeners() {
 				if (checkbox !== e.target) checkbox.checked = false;
 			});
 
-			const selectedBox = document.querySelector("[type=checkbox]");
-
-			const dayHeader = document.querySelector("#day-header");
-
-			if (selectedBox) {
-				dayHeader.innerText = box.parentElement.innerText
+			if (box.checked) {
+				dayHeader.innerHTML = verifyDay(box.parentElement.innerText);
 			} else {
-				dayHeader.innerText = monthSelect.value;
+				setMonth();
 			}
 		});
 	});
 }
+
+function verifyDay(day) {
+	if (day.match(/11$|12$|13$/gm)) {
+		return `${day}<span class="day-span">th</span>`;
+	} else if (day.match(/1$/gm)) {
+		return `${day}<span class="day-span">st</span>`;
+	} else if (day.match(/2$/gm)) {
+		return `${day}<span class="day-span">nd</span>`;
+	} else if (day.match(/3$/gm)) {
+		return `${day}<span class="day-span">rd</span>`;
+	} else {
+		return `${day}<span class="day-span">th</span>`;
+	}
+}
+
+monthSelect.addEventListener("change", (e) => {
+	currentMonth = e.target.value;
+	table.querySelector("tbody").remove();
+	createDays();
+	addCheckboxListeners();
+	setMonth();
+});
 
 createMonthOptions();
 createCalendar();

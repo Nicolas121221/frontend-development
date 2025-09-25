@@ -2,7 +2,7 @@ const root = document.documentElement;
 let isIncreasing = true;
 const min = 200;
 const max = 240;
-let colorIndex = 201;
+let colorIndex = min + 1;
 
 setInterval(() => {
 	root.style.setProperty(

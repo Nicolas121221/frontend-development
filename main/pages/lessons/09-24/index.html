@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>button counter</title>
+		<script>
+			let number = 0;
+			function add() {
+				number++;
+				document.title = number;
+			}
+			function remove() {
+				number--;
+				document.title = number;
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="add()">&plus;</button>
+		<button onclick="remove()">&minus;</button>
+	</body>
+</html>

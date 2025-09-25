@@ -1,0 +1,49 @@
+#events{
+    margin-top: -45rem;
+    max-width: 40rem;
+}
+
+#events h3{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+#events hr{
+    border-width: 0.1rem;
+}
+
+#events h4{
+	font-size: 5rem;
+    margin-bottom: -2rem;
+}
+
+#events .day-span{
+    font-size: 1.4rem;
+    vertical-align: super;
+}
+
+#events .list{
+    max-height: 70vh;
+    font-size: 1.6rem;
+    color: var(--text-strong);
+    overflow-y: scroll;
+    scrollbar-3dlight-color: var(--color-light-primary);
+    scrollbar-color: var(--color-background-secondary);
+}
+
+#events .list li{
+    width: 100%;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    transition: backdrop-filter 200ms;
+
+    & a{
+        height: 5rem;
+        width: 100%;
+    }
+}
+
+#events .list li:hover{
+    backdrop-filter: brightness(170%);
+}
+

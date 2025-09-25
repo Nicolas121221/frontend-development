@@ -1,8 +1,9 @@
 @import url(../../../global/styles/index.css);
 @import url(./calendar.css);
+@import url(./events.css);
 
 .intro {
-	height: 100vh;
+	height: 50vh;
 }
 
 .intro h1 {
@@ -39,19 +40,14 @@
 	color: var(--color-white);
 }
 
-.schedule h2 {
+.schedule h3, .personal h3 {
 	text-align: right;
 	font-size: 3rem;
 }
 
-.schedule {
-	height: 75vh;
+.schedule, .personal {
+	padding-top: 10rem;
+	height: 100vh;
 }
 
-#events{
-	margin-top: -43rem;
-}
 
-#events h4{
-	font-size: 2rem;
-}

@@ -6,7 +6,7 @@ async function createComponent(path, id){
 		const component = await fetch(path);
 		const response = await component.text();
 
-		element.innerHTML = response
+		element.innerHTML += response
 	}
 	catch(e){
 		console.log("error during the creation of a component", e)
